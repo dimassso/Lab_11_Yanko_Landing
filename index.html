@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_11_Yanko_JS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Підключення jQuery Validate -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment</h1>
+        <p class="subheading">Choose payment method below</p>
+
+        <div class="payment-methods">
+            <div class="method active">
+                <img src="photos/credit_card.png" alt="Credit Card">
+            </div>
+            <div class="method">
+                <img src="photos/paypal.png" alt="PayPal">
+            </div>
+            <div class="method">
+                <img src="photos/amazon.png" alt="Amazon Pay">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="billing-info">
+                <h2>1. Billing Info</h2>
+                <form id="payment-form">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="John Doe">
+
+                    <label for="billing-address">Billing Address</label>
+                    <div class="input-with-icon">
+                        <input type="text" id="billing-address" name="billing-address" placeholder="Fyrtorni">
+                        <span class="icon">📍</span>
+                    </div>
+
+                    <div class="grid">
+                        <div>
+                            <label for="city">City</label>
+                            <input type="text" id="city" placeholder="Stockholm">
+                        </div>
+                        <div>
+                            <label for="zip-code">ZIP Code</label>
+                            <input type="text" id="zip-code" name="zip-code" placeholder="12804">
+                        </div>
+                    </div>
+
+                    <label for="country">Country</label>
+                    <select id="country">
+                        <option>Sweden</option>
+                        <option>Norway</option>
+                        <option>Denmark</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <!-- Блок для введення рядка та відображення результату -->
+        <div class="vowel-section">
+            <label for="inputString">Введіть рядок:</label>
+            <input type="text" id="inputString">
+            <button onclick="findFirstVowel()">Знайти першу голосну</button>
+            <p id="result"></p>
+        </div>
+
+        <div class="buttons">
+            <button class="secondary">RETURN TO STORE</button>
+            <button class="secondary">BACK TO SHIPPING</button>
+            <button class="primary" onclick="validateForm()">PROCEED</button>
+        </div>
+    </div>
+
+    <!-- Підключення основних JS-файлів -->
+    <script src="main.js"></script>
+    <script src="func.js"></script>
+</body>
+</html>
